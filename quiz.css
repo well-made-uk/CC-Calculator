@@ -1,0 +1,904 @@
+/* Quiz-specific styling *** */
+
+/* Items to hide on desktop */
+
+#quiz .frm_error_style,
+#quiz .frm_page_bar > li:nth-child(3),
+#quiz .frm_page_num_3 .frm_rootline_group,
+#quiz .frm_radio input,
+#quiz .frm_required,
+#quiz .frm_rootline_group > ul::before,
+#quiz .frm_show_lines:before,
+#quiz .frm_add_form_row.frm_hidden,
+#quiz .frm_hidden,
+#quiz .frm_remove_form_row.frm_hidden,
+#quiz .search-choice-close,
+#quiz .with_frm_style .frm_button.frm_hidden {
+  display : none!important;
+}
+
+#quiz .frm_submit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Items to hide on mobile */
+
+@media
+  only screen
+  and (max-width : 769px) {
+  #quiz .badge-img-left,
+  #quiz .badge-img-right {
+    display : none!important;
+  }
+}
+
+#quiz {
+  opacity    : 0;
+  transition : opacity 0.2s ease;
+}
+
+#quiz h1 {
+  font-weight : bold;
+    max-width: 500px;
+    margin: auto;
+}
+
+@media only screen and (min-width:770px) {
+  #quiz h1 br {
+    display:none;
+  }
+}
+
+#quiz .frm_page_num_1 fieldset {
+  padding-bottom : 160px;
+}
+
+/* Radio Button Circles */
+
+#quiz .frm_opt_container {
+  display               : grid;
+  max-width             : 650px;
+  margin                : auto;
+  grid-gap              : 20px;
+  grid-template-columns : 1fr 1fr 1fr;
+  grid-template-rows    : 1fr auto;
+}
+
+@media
+  only screen
+  and (max-width : 769px) {
+  #quiz .frm_opt_container {
+    max-width             : 200px;
+    grid-auto-rows        : 1fr;
+    grid-template-columns : 1fr !important;
+    grid-template-rows    : unset;
+  }
+}
+
+#quiz .frm_opt_container::before {
+  content        : '';
+  width          : 0;
+  padding-bottom : 100%;
+  grid-column    : 1 / 1;
+  grid-row       : 1 / 1;
+}
+
+#quiz .frm_radio:first-child {
+  grid-column : 1;
+  grid-row    : 1;
+}
+
+#quiz .frm_radio div {
+  display         : flex;
+  width           : 100%;
+  height          : 100%;
+  padding         : 10px;
+  border          : 3px black solid;
+  border-radius   : 50%;
+  background      : white;
+  text-indent     : 0;
+  align-items     : center;
+  font-size       : 20px;
+  font-weight     : 600;
+  flex-direction  : column;
+  justify-content : center;
+  transition      : all 0.2s ease;
+}
+
+#quiz .frm_radio div span {
+  display     : block!important;
+  padding-top : 5px!important;
+  font-size   : 14px!important;
+  font-weight : 400!important;
+  line-height : 1.2rem;
+}
+@media only screen and (min-width:770px) {
+  #quiz .frm_radio div:hover {
+    background : var(--accent-color-2);
+    transform  : scale(1.1);
+    cursor     : pointer;
+  }
+}
+
+#frm_radio_17-3 > label > div #quiz .frm_radio label {
+  width        : 100%!important;
+  height       : 100%!important;
+  margin       : auto!important;
+  padding-left : 0!important;
+  color        : black!important;
+  font-size    : 32px!important;
+  line-height  : 1.2!important;
+}
+
+#quiz .frm_radio input:checked + div {
+  background : var(--accent-color-2);
+}
+
+/* Quiz Bubble 4 */
+
+#quiz .frm_radio:nth-child(4) div,
+#quiz .frm_radio:nth-child(4) div:hover {
+  width          : 100%;
+  height         : unset;
+  padding        : unset;
+  padding-top    : 10px;
+  border         : none;
+  border-radius  : unset;
+  background     : unset!important;
+  text-align     : center;
+  text-indent    : 0;
+  flex-direction : row;
+}
+
+#quiz .frm_radio:nth-child(4) {
+  grid-column : 1 / span 3;
+}
+
+@media
+  only screen
+  and (max-width : 769px) {
+  #quiz .frm_radio:nth-child(4) div {
+    grid-column : unset;
+  }
+
+  #quiz .frm_radio:nth-child(4) {
+    margin-top  : 20%;
+    grid-column : unset;
+  }
+}
+
+#quiz .frm_opt_container .frm_radio:nth-child(4) div::before {
+  content       : '';
+  width         : 18px;
+  height        : 18px;
+  margin-right  : 10px;
+  border        : 2px solid black;
+  border-radius : 3px;
+}
+
+#quiz p.smaller {
+  margin     : 0;
+  margin-top : 20px;
+  padding    : 0;
+  font-size  : 18px;
+}
+
+#quiz .frm_prev_page {
+  padding        : 0!important;
+  color          : black!important;
+  border         : none!important;
+  background     : transparent!important;
+  box-shadow     : none!important;
+  text-transform : none!important;
+  font-size      : 20px!important;
+  font-weight    : 600!important;
+  transition     : transform 0.2s ease;
+  bottom         : 20px;
+}
+
+@media
+  only screen
+  and (min-width : 770px) {
+  #quiz .frm_prev_page {
+    position : relative;
+    left     : -300px;
+  }
+}
+
+#quiz .frm_prev_page:hover {
+  transform : scale(1.1);
+}
+
+#quiz .with_frm_style input[type=text] {
+  max-width     : 600px;
+  height        : 60px;
+  border        : solid 3px black;
+  border-radius : 3px;
+  font-size     : 22px;
+}
+
+#quiz input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance : none!important;
+  border             : 4px solid black!important;
+}
+
+#quiz .frm_form_field,
+#quiz .frm_form_field,
+#quiz .frm_primary_label,
+#quiz .frm_submit,
+#quiz label {
+  margin-bottom : 20px;
+  color         : black;
+  text-align    : center;
+  font-family   : 'Avenir';
+  font-size     : 50px;
+  line-height   : 3rem;
+}
+
+#quiz .frm_radio label {
+  padding-left : 0px;
+  line-height  : 1.6rem;
+}
+
+#quiz .frm_primary_label {
+  padding-bottom : 40px;
+  font-weight    : 500;
+}
+
+@media
+  only screen
+  and (max-width : 769px) {
+  #quiz .frm_primary_label {
+    padding-bottom : 0;
+  }
+}
+
+#quiz .frm_page_num_1 label {
+  margin-bottom  : 0px!important;
+  padding-bottom : 10px;
+}
+
+#quiz .chosen-drop,
+#quiz .chosen-single {
+  -webkit-appearance : none;
+  appearance         : none;
+  width              : 50%;
+  max-width          : 400px;
+  height             : auto;
+  margin-top         : 30px;
+  margin-left        : 50%;
+  border             : 3px solid black;
+  border-radius      : 2px;
+  text-align         : left;
+  transform          : translateX(-50%);
+}
+
+@media only screen and (max-width:767px) {
+  #quiz .chosen-single {
+    width:90%;
+  }
+}
+
+#quiz .chosen-drop {
+  margin-top : -5px!important;
+  border-top : none!important;
+}
+
+#quiz .chosen-single span {
+  padding         : 20px!important;
+  color           : black!important;
+  border          : none!important;
+  text-decoration : none!important;
+  font-size       : 20px!important;
+}
+
+#quiz input:checked {
+  background : red!important;
+}
+
+#quiz .nv-comment-content a,
+#quiz .nv-content-wrap a:not(.button):not(.wp-block-file__button) {
+  text-decoration : none!important;
+}
+
+#quiz button.frm_button_submit {
+  z-index        : 2;
+  padding        : 15px 200px!important;
+  color          : black!important;
+  opacity        : 100!important;
+  border         : 3px black solid!important;
+  border-radius  : 0!important;
+  background     : white!important;
+  box-shadow     : none!important;
+  box-shadow     : 10px 10px 0 0 var(--accent-color-1)!important;
+  text-transform : none!important;
+  font-size      : 20px!important;
+}
+
+#quiz imgw60 {
+  width : 90px;
+}
+
+/* Reduce button sizes on very small screens */
+
+@media
+  only screen
+  and (max-width : 600px) {
+  #quiz button.frm_button_submit {
+    padding : 15px 80px!important;
+  }
+}
+
+#quiz button.frm_button_submit:hover {
+  box-shadow : 0px 0px 0 0 var(--accent-color-1)!important;
+}
+
+#quiz .frm_page_num_1 label {
+  color     : black;
+  font-size : 30px;
+}
+
+#quiz .time {
+  display   : block;
+  font-size : 22px;
+  padding-top: 10px;
+}
+
+#quiz .chosen-search {
+  padding : 10px!important;
+}
+
+#quiz .chosen-search input {
+  -webkit-appearance : none;
+  appearance         : none;
+  padding            : 10px!important;
+  border-color       : #cccccc!important;
+  background-image   : none!important;
+  box-shadow         : none!important;
+}
+
+#quiz .chosen-results {
+  height  : 200px!important;
+  padding : 10px!important;
+}
+
+#quiz .active-result {
+  padding   : 14px!important;
+  color     : black!important;
+  font-size : 20px!important;
+}
+
+#quiz .chosen-results li.highlighted {
+  background : var(--accent-color-2)!important;
+}
+
+/* More */
+
+#quiz .frm_page_num_6 .frm_prev_page {
+  bottom : unset;
+}
+
+#quiz .almost-there {
+  padding-top    : 50px!important;
+  padding-bottom : 50px!important;
+  font-size      : 56px;
+  font-weight    : 500;
+}
+
+#quiz img {
+  width     : 80%;
+  max-width : 250px!important;
+}
+
+#quiz .frm_error {
+  color      : red!important;
+  text-align : center!important;
+  font-size  : 20px!important;
+}
+
+#quiz .frm_chzn[aria-invalid=true] + .chosen-container .chosen-drop,
+#quiz .frm_chzn[aria-invalid=true] + .chosen-container .chosen-single {
+  border-color : red!important;
+}
+
+#quiz .frm_loading_form label {
+  background : inherit!important;
+}
+
+#quiz .frm_page_num_3 .frm_radio div {
+  height : 0;
+  padding-bottom:calc(100% - 20px);
+}
+
+#quiz .frm_page_num_3 .frm_radio img {
+  transform:translateY(60%);
+}
+
+#quiz .frm_page_num_3 .frm_opt_container {
+  max-width             : 429px;
+  grid-template-columns : 1fr 1fr;
+}
+
+#quiz .frm_fields_container {
+  min-height:unset;
+}
+
+@media
+  only screen
+  and (max-width : 769px) {
+  #quiz .frm_page_num_3 .frm_opt_container {
+    max-width : 200px;
+  }
+}
+
+/* Flight Slider */
+
+#quiz .frm_range_value {
+  font-family : Avenir;
+}
+
+#quiz .frm_range_value::after {
+  content : 'hrs/year';
+}
+
+@media
+  only screen
+  and (max-width : 530px) {
+  #quiz .frm_range_value {
+    font-size : 22px;
+  }
+}
+
+#quiz .frm_range_container::before {
+  content          : '';
+  display          : block;
+  position         : absolute;
+  top              : 3px;
+  left             : 0;
+  width            : 5px!important;
+  height           : 40px!important;
+  border-radius    : 3px;
+  background-color : black!important;
+}
+
+#quiz .frm_range_container::after {
+  content          : '';
+  display          : block;
+  position         : absolute;
+  top              : 3px;
+  right            : 0;
+  width            : 5px!important;
+  height           : 40px!important;
+  border-radius    : 3px;
+  background-color : black!important;
+}
+
+#quiz .frm_range_container input::after,
+#quiz .frm_range_container input::before {
+  position    : absolute;
+  top         : 55px;
+  width       : 80px;
+  text-align  : center;
+  font-family : Avenir;
+  font-size   : 24px;
+  font-weight : 600;
+  line-height : 1.6rem;
+}
+
+#quiz .frm_range_container input::before {
+  left : -37px;
+}
+
+#quiz .frm_range_container input::after {
+  right : -37px;
+}
+
+@media
+  only screen
+  and (max-width : 540px) {
+  #quiz .frm_range_container input::after,
+  #quiz .frm_range_container input::before {
+    top       : 50px;
+    font-size : 18px;
+  }
+
+  #quiz .frm_range_container input::before {
+    left  : -28px;
+    width : 60px;
+  }
+}
+
+#quiz .frm_range_value {
+  display       : inline;
+  width         : auto;
+  margin        : auto;
+  padding       : 10px;
+  color         : black;
+  border        : 4px black solid;
+  border-radius : 3px;
+  background    : var(--accent-color-1);
+}
+
+#quiz input[type=range] {
+  -webkit-appearance : none;
+  margin-bottom      : 30px;
+}
+
+#quiz .frm_range_container {
+  position      : relative;
+  width         : 400px;
+  max-width     : calc(100% - 60px);
+  margin        : auto;
+  margin-bottom : 50px;
+}
+
+/* Hide flight slider values on very small screens */
+
+@media
+  only screen
+  and (max-width : 400px) {
+  #quiz .frm_range_container input::after,
+  #quiz .frm_range_container input::before {
+    content : '';
+  }
+
+  #quiz .frm_range_container {
+    position      : relative!important;
+    width         : 80%;
+    margin        : auto!important;
+    margin-bottom : 40px!important;
+  }
+}
+
+/* Bubble icons */
+
+#quiz .frm_page_num_2 .frm_radio:nth-child(3) figure {
+  z-index           : -1;
+  position          : absolute;
+  right             : -41%;
+  bottom            : 0%;
+  width             : 180px;
+  height            : 80px;
+  background-image  : url('https://clevercarbon.io/wp-content/uploads/2020/07/Asset-2.svg');
+  background-repeat : no-repeat;
+  background-size   : contain;
+  transform-origin  : top left;
+  transition        : all 0.2s ease;
+}
+
+#quiz .frm_page_num_2 .frm_radio:nth-child(3) div:hover + figure {
+  transform : scale(1.1);
+}
+
+#quiz .frm_page_num_5 .frm_radio:nth-child(3) figure {
+  z-index           : -1;
+  position          : absolute;
+  top               : -3%;
+  right             : -20%;
+  width             : 85px;
+  height            : 72px;
+  background-image  : url('https://clevercarbon.io/wp-content/uploads/2020/07/Asset-3.svg');
+  background-repeat : no-repeat;
+  background-size   : contain;
+  transform-origin  : bottom left;
+  transition        : all 0.2s ease;
+}
+
+#quiz .frm_page_num_5 .frm_radio:nth-child(3) div:hover + figure {
+  transform : scale(1.1);
+}
+
+#quiz .frm_page_num_6 .frm_radio:nth-child(1) figure {
+  z-index           : -1;
+  position          : absolute;
+  top               : -5%;
+  left              : -25%;
+  width             : 115px;
+  height            : 122px;
+  background-image  : url('https://clevercarbon.io/wp-content/uploads/2020/07/Asset-4.svg');
+  background-repeat : no-repeat;
+  background-size   : contain;
+  transform-origin  : bottom right;
+  transition        : all 0.2s ease;
+}
+
+#quiz .frm_page_num_6 .frm_radio:nth-child(1) div:hover + figure {
+  transform : scale(1.1);
+}
+
+#quiz .frm_page_num_7 .frm_radio:nth-child(3) figure {
+  z-index           : -1;
+  position          : absolute;
+  top               : -11%;
+  right             : -11%;
+  width             : 63px;
+  height            : 108px;
+  background-image  : url('https://clevercarbon.io/wp-content/uploads/2020/07/Asset-5.svg');
+  background-repeat : no-repeat;
+  background-size   : contain;
+  transform-origin  : bottom left;
+  transition        : all 0.2s ease;
+}
+
+#quiz .frm_page_num_7 .frm_radio:nth-child(3) div:hover + figure {
+  transform : scale(1.1);
+}
+
+#quiz .frm_radio label {
+  position : relative!important;
+  height   : 100%;
+}
+
+#quiz .frm_radio div {
+  font-size   : 20px!important;
+  font-weight : 600!important;
+}
+
+/* Mobile Bubbles */
+
+#quiz #frm_field_29_container,
+#quiz .frm_form_field,
+#quiz .frm_primary_label,
+#quiz .frm_submit,
+#quiz label {
+  margin-bottom : 20px!important;
+  color         : black!important;
+  text-align    : center!important;
+  font-family   : 'Avenir'!important;
+  font-size     : 35px!important;
+}
+
+/* Vehicle page */
+
+#fuel-vehicle {
+  display          : block;
+  box-sizing       : border-box;
+  width            : 172px!important;
+  height           : 172px!important;
+  padding          : 0;
+  background-image : url('https://clevercarbon.io/wp-content/uploads/2021/07/gas-icon.svg');
+  white-space      : normal;
+}
+
+#electric-vehicle {
+  display          : block;
+  box-sizing       : border-box;
+  width            : 172px!important;
+  height           : 172px!important;
+  padding          : 0;
+  background-image : url('https://clevercarbon.io/wp-content/uploads/2021/07/electric-vehicle-icon.svg');
+  white-space      : normal;
+}
+
+/* Badge Images */
+
+@media
+  only screen
+  and (min-width : 1024px) {
+  .badge-img-left {
+    z-index             : -1;
+    display             : block;
+    position            : absolute;
+    top                 : 80px;
+    left                : 0;
+    width               : 300px;
+    height              : 300px;
+    background-image    : url('https://clevercarbon.io/wp-content/uploads/2021/04/Asset-1@2x-80.jpg');
+    background-repeat   : no-repeat;
+    background-position : center center;
+    background-size     : contain;
+  }
+}
+
+@media
+  only screen
+  and (min-width : 1024px) {
+  .badge-img-right {
+    z-index             : -1;
+    display             : block;
+    position            : absolute;
+    top                 : 80px;
+    right               : 0;
+    width               : 300px;
+    height              : 300px;
+    background-image    : url('https://clevercarbon.io/wp-content/uploads/2021/04/Asset-2@2x-80.jpg');
+    background-repeat   : no-repeat;
+    background-position : center center;
+    background-size     : contain;
+  }
+}
+
+#badgesmob {
+  display    : block;
+  background : url('https://clevercarbon.io/wp-content/uploads/2021/05/quiz-changes-assets-01.png');
+}
+
+/* Make the text field font smaller on mobile */
+
+@media only screen and (max-width:768px) {
+  #quiz .with_frm_style input[type=text] {
+    font-size:18px;
+  }
+}
+
+/* Remove form loading animation */
+
+.frm_prev_page::before,
+.with_frm_style .frm_loading_prev .frm_prev_page::before {
+  content             : ''!important;
+  display             : inline!important;
+  position            : relative!important;
+  top                 : unset!important;
+  left                : unset!important;
+  height              : 20px!important;
+  margin-top          : unset!important;
+  margin-left         : unset!important;
+  padding-right       : 40px!important;
+  border              : 0!important;
+  border-radius       : 0!important;
+  background-image    : url('https://clevercarbon.io/wp-content/uploads/2020/07/Asset-1-5.svg')!important;
+  background-repeat   : no-repeat!important;
+  background-position : left!important;
+  background-size     : contain!important;
+  -moz-animation      : unset!important;
+  -o-animation        : unset!important;
+  -webkit-animation   : unset!important;
+  animation           : unset!important;
+  transition          : all 0.2s ease;
+}
+
+/* CC FRM styling */
+
+@media
+  only screen
+  and (max-width : 1024px) {
+  .elementor-1514 .elementor-row {
+    background-image : none!important;
+  }
+}
+
+/* Rootline */
+
+.frm_forms .frm_rootline_group {
+  width         : 280px;
+  margin        : auto;
+  margin-bottom : 30px;
+  padding       : 5px;
+}
+
+.frm_forms .frm_rootline_group ul {
+  display         : flex;
+  flex-direction  : row;
+  justify-content : space-evenly;
+  list-style-type : none;
+  padding-inline-start: 0;
+}
+
+.frm_forms .frm_rootline_single input[type="button"],
+.frm_forms .frm_rootline_single input[type="button"]:active,
+.frm_forms .frm_rootline_single input[type="button"]:focus,
+.frm_forms .frm_rootline_single input[type="button"]:hover {
+  -moz-appearance    : none;
+  -webkit-appearance : none;
+  appearance         : none;
+  width              : 30px;
+  height             : 30px;
+  padding            : 0!important;
+  color              : transparent;
+  border             : 4px solid black;
+  border-radius      : 50%;
+  background         : white;
+  transition         : all 0.2s ease;
+}
+
+.frm_forms .frm_rootline_single:not(.frm_current_page) input[type="button"]:hover {
+  transform : scale(1.1);
+}
+
+.frm_forms .frm_current_page.frm_rootline_single input[type="button"],
+.frm_forms .frm_rootline_single input[type="button"].frm_page_back {
+  background-color : var(--accent-color-1);
+}
+
+/* Default English Localisation */
+
+.frm_range_value::after {
+  content : 'hrs/year';
+}
+
+.frm_range_container input::before {
+  content : '0 hours';
+}
+
+.frm_range_container input::after {
+  content : '100 hours';
+}
+
+/* Results / Breakdown */
+
+#breakdown .flying::before {
+    content:'*';
+    margin-left:-12px;
+}
+
+#breakdown li {
+    font-size:22px;
+    line-height:1.2em;
+    list-style-type: none;
+}
+
+#breakdown ul {
+    padding-left:0;
+}
+
+#breakdown li:not(:last-child) {
+    margin-bottom:16px;
+}
+
+#breakdown .balls {
+    display:inline-block;
+    float:right;
+    display:flex;
+    flex-direction:row;
+}
+
+#breakdown .balls > div {
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    border: 4px solid black;
+    margin-left:8px;
+    transition: all 0.2s ease;
+}
+
+#breakdown .balls > div:hover {
+    transform:scale(1.1);
+}
+
+#breakdown-key .key1 .keyBall {
+    background:var(--accent-color-1);
+}
+
+#breakdown-key .key2 .keyBall {
+    background:var(--accent-color-2);
+}
+
+#breakdown-key .key3 .keyBall {
+    background:var(--accent-color-3);
+}
+
+#breakdown-key li {
+    font-size:16px;
+    line-height:1.2em;
+    margin-right:30px;
+    margin-bottom:15px;
+}
+
+#breakdown-key li, #breakdown-key ul {
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+#breakdown-key li {
+    flex-wrap:nowrap;
+}
+
+#breakdown-key .keyBall {
+    width:23px;
+    height:23px;
+    border-radius:50%;
+    border: 4px solid black;
+    margin-right:8px;
+}
+
+#breakdown-key ul {
+    padding-left:0;
+}
+
+.frm_combo_inputs_container, .frm_form_fields .frm_fields_container, .frm_form_fields .frm_section_heading, .frm_grid_container {
+  display:block;
+}
